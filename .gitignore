@@ -1,0 +1,4 @@
+*.exe
+*.lib
+*.exp
+template.pb

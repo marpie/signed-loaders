@@ -16,35 +16,38 @@ Macro LoopForever()
   Sleep_(-1)
 EndMacro
 
+Macro DbgOutFunctionName()
+  OutputDebugString_("Func: " + #PB_Compiler_Procedure)
+EndMacro
+
 ; ---------------------------------------------------------------------------
 ;- Exports: goopdate.dll - GoogleUpdate.exe - 32bit
 
 ProcedureDLL.l DllEntry()
-  OutputDebugString_("DllEntry()")
-  ;LoopForever()
+  DbgOutFunctionName()
 EndProcedure
 
 ; ---------------------------------------------------------------------------
 
 ProcedureDLL AttachProcess(Instance)
-  OutputDebugString_("AttachProcess()")
+  DbgOutFunctionName()
 EndProcedure
 
 ProcedureDLL DetachProcess(Instance)
-  OutputDebugString_("DetachProcess()")
+  DbgOutFunctionName()
 EndProcedure
 
 ProcedureDLL AttachThread(Instance)
-  OutputDebugString_("AttachThread()")
+  DbgOutFunctionName()
 EndProcedure
 
 ProcedureDLL DetachThread(Instance)
-  OutputDebugString_("DetachThread()")
+  DbgOutFunctionName()
 EndProcedure
 
 ; IDE Options = PureBasic 5.62 (Windows - x64)
 ; ExecutableFormat = Shared dll
-; CursorPosition = 19
+; CursorPosition = 44
 ; Folding = --
 ; EnableXP
 ; Executable = goopdate.dll
